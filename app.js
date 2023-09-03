@@ -3,9 +3,15 @@ const fontSelector = document.getElementById("font-types");
 const saveBtn = document.getElementById("save");
 const textInput = document.getElementById("text");
 const fileInput = document.getElementById("file");
+
+const brushMode = document.getElementsByClassName("brush-mode");
+const brushModes = Array.from(document.getElementsByClassName("brush-mode"));
+const penBtn = document.getElementById("pen-btn");
+const fillBtn = document.getElementById("fill-btn");
+const eraserBtn = document.getElementById("eraser-btn");
+
 const modeBtn = document.getElementById("mode-btn");
 const destroyBtn = document.getElementById("destroy-btn");
-const eraserBtn = document.getElementById("eraser-btn");
 
 const colorOptions = Array.from(
   document.getElementsByClassName("color-option")
@@ -55,7 +61,7 @@ function changeColor(color) {
   ctx.strokeStyle = color;
   ctx.fillStyle = color;
 }
-
+/*
 function onModeClick() {
   if (isFilling) {
     isFilling = false;
@@ -65,6 +71,14 @@ function onModeClick() {
     modeBtn.innerText = "Draw";
   }
 }
+*/
+function onPenClick() {
+  isFilling = false;
+}
+function onFillClick() {
+  isFilling = true;
+}
+
 function onCanvasClick() {
   if (isFilling) {
     ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -80,7 +94,6 @@ function onDestroyClick() {
 function onEraserClick() {
   ctx.strokeStyle = "white";
   isFilling = false;
-  modeBtn.innerText = "Fill";
 }
 function onFileChange(event) {
   const file = event.target.files[0];
@@ -114,6 +127,15 @@ function onFontChange() {
   font = fontSelector.value;
   ctx.font = `48px ${font}`;
 }
+function handleBrushModeBtnClick(event) {
+  if (event.target.classList[1] !== "activated") {
+    for (i = 0; i < brushModes.length; i++) {
+      brushModes[i].classList.remove("activated");
+    }
+  }
+  event.target.classList.add("activated");
+}
+
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
@@ -125,10 +147,16 @@ lineWidth.addEventListener("change", onLineWidthChange);
 color.addEventListener("change", onColorChange);
 
 colorOptions.forEach((color) => color.addEventListener("click", onColorClick));
-modeBtn.addEventListener("click", onModeClick);
+//modeBtn.addEventListener("click", onModeClick);
+penBtn.addEventListener("click", onPenClick);
+fillBtn.addEventListener("click", onFillClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraserBtn.addEventListener("click", onEraserClick);
 fileInput.addEventListener("change", onFileChange);
 saveBtn.addEventListener("click", onSaveClick);
 
 fontSelector.addEventListener("change", onFontChange);
+
+brushModes.forEach((btn) =>
+  btn.addEventListener("click", handleBrushModeBtnClick)
+);

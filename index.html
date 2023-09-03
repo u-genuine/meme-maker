@@ -18,64 +18,64 @@
       <input type="color" id="color" />
       <div
         class="color-option"
-        style="background-color: #1abc9c"
-        data-color="#1abc9c"
+        style="background-color: #d4e2bb"
+        data-color="#dddE2BB"
       ></div>
       <div
         class="color-option"
-        style="background-color: #3498db"
-        data-color="#3498db"
+        style="background-color: #bbdce2"
+        data-color="#Bbdce2"
       ></div>
       <div
         class="color-option"
-        style="background-color: #34495e"
-        data-color="#34495e"
+        style="background-color: #bbe2da"
+        data-color="#bbe2da"
       ></div>
       <div
         class="color-option"
-        style="background-color: #27ae60"
-        data-color="#27ae60"
+        style="background-color: #bbe2cc"
+        data-color="#bbe2cc"
       ></div>
       <div
         class="color-option"
-        style="background-color: #8e44ad"
-        data-color="#8e44ad"
+        style="background-color: #bbc9e2"
+        data-color="#bbc9e2"
       ></div>
       <div
         class="color-option"
-        style="background-color: #f1c40f"
-        data-color="#f1c40f"
+        style="background-color: #bbbeea"
+        data-color="#bbbeea"
       ></div>
       <div
         class="color-option"
-        style="background-color: #e74c3c"
-        data-color="#e74c3c"
+        style="background-color: #ede6b1"
+        data-color="#ede6b1"
       ></div>
       <div
         class="color-option"
-        style="background-color: #95a5a6"
-        data-color="#95a5a6"
+        style="background-color: #edd9b1"
+        data-color="#edd9b1"
       ></div>
       <div
         class="color-option"
-        style="background-color: #d35400"
-        data-color="#d35400"
+        style="background-color: #edc8b1"
+        data-color="#edc8b1"
       ></div>
       <div
         class="color-option"
-        style="background-color: #2ecc71"
-        data-color="#2ecc71"
+        style="background-color: #e7bcb5"
+        data-color="#e7bcb5"
       ></div>
       <div
         class="color-option"
-        style="background-color: #e67e22"
-        data-color="#e67e22"
+        style="background-color: #e7b5bf"
+        data-color="#e7b5bf"
       ></div>
     </div>
     <canvas></canvas>
     <div class="btns">
       <button id="destroy-btn">Destroy</button>
-      <fieldset>
+      <fieldset id="brush-size">
         <legend>Brush Size</legend>
         <input
           id="line-width"
@@ -87,15 +87,16 @@
           step="0.5"
         />
       </fieldset>
-      <fieldset id="brush-mode">
+      <fieldset id="brush-modes">
         <legend>Brush Mode</legend>
-        <button id="mode-btn">Fill</button>
-        <button id="eraser-btn">Eraser</button>
+        <button id="pen-btn" class="brush-mode activated">Pen</button>
+        <button id="fill-btn" class="brush-mode">Fill</button>
+        <button id="eraser-btn" class="brush-mode">Eraser</button>
       </fieldset>
       <label for="file"> 🖼 Add Photo </label>
       <input type="file" accept="image/*" id="file" />
       <fieldset id="text-style">
-        <legend>Text</legend>
+        <legend>Text - Double Click !!</legend>
         <select id="font-types">
           <option
             value="'Black Han Sans'"

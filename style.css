@@ -21,11 +21,11 @@ fieldset {
   border-radius: 10px;
   padding: 10px;
 }
-fieldset#brush-mode {
+fieldset#brush-modes {
   display: flex;
   justify-content: space-around;
 }
-fieldset#brush-mode button {
+fieldset#brush-modes button {
   padding: 10px;
 }
 
@@ -77,7 +77,7 @@ label {
   all: unset;
   padding: 10px 0px;
   text-align: center;
-  background-color: royalblue;
+  background-color: #80a6d5;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -104,4 +104,9 @@ input#font-size {
 select,
 input#line-width {
   width: 100%;
+  accent-color: #80a6d5;
+}
+
+.activated {
+  border: 5px solid skyblue;
 }
