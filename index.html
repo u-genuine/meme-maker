@@ -74,58 +74,78 @@
     </div>
     <canvas></canvas>
     <div class="btns">
-      <input
-        id="line-width"
-        type="range"
-        min="1"
-        ,
-        max="10"
-        value="5"
-        step="0.5"
-      />
-      <button id="mode-btn">🩸 Fill</button>
-      <button id="destroy-btn">💣 Destroy</button>
-      <button id="eraser-btn">❌ Eraser</button>
+      <button id="destroy-btn">Destroy</button>
+      <fieldset>
+        <legend>Brush Size</legend>
+        <input
+          id="line-width"
+          type="range"
+          min="1"
+          ,
+          max="10"
+          value="5"
+          step="0.5"
+        />
+      </fieldset>
+      <fieldset id="brush-mode">
+        <legend>Brush Mode</legend>
+        <button id="mode-btn">Fill</button>
+        <button id="eraser-btn">Eraser</button>
+      </fieldset>
       <label for="file"> 🖼 Add Photo </label>
       <input type="file" accept="image/*" id="file" />
-      <select id="font-types">
-        <option value="'Black Han Sans'" style="font-family: 'Black Han Sans'">
-          Black Han Sans
-        </option>
-        <option class="font-option" value="Kanit" style="font-family: 'Kanit'">
-          Kanit
-        </option>
-        <option value="'Noto Sans KR'" style="font-family: 'Noto Sans KR'">
-          Noto Sans 한글
-        </option>
-        <option value="'Noto Serif KR'" style="font-family: 'Noto Serif KR'">
-          Noto Serif 한글
-        </option>
-        <option value="'Phudu', cursive" style="font-family: 'Phudu', cursive">
-          Phodo
-        </option>
-        <option
-          value="'Nanum Gothic', sans-serif"
-          style="font-family: 'Nanum Gothic', sans-serif"
-        >
-          나눔 고딕
-        </option>
-        <option
-          value="'Playfair Display', serif;
-          "
-          style="font-family: 'Playfair Display', serif"
-        >
-          Playfair Display
-        </option>
-        <option
-          value="'Gothic A1', sans-serif"
-          style="font-family: 'Gothic A1', sans-serif"
-        >
-          고딕
-        </option>
-      </select>
-      <input id="font-size" type="number" value="48" />
-      <input type="text" placeholder="Add text here... :)" id="text" />
+      <fieldset id="text-style">
+        <legend>Text</legend>
+        <select id="font-types">
+          <option
+            value="'Black Han Sans'"
+            style="font-family: 'Black Han Sans'"
+          >
+            Black Han Sans
+          </option>
+          <option
+            class="font-option"
+            value="Kanit"
+            style="font-family: 'Kanit'"
+          >
+            Kanit
+          </option>
+          <option value="'Noto Sans KR'" style="font-family: 'Noto Sans KR'">
+            Noto Sans 한글
+          </option>
+          <option value="'Noto Serif KR'" style="font-family: 'Noto Serif KR'">
+            Noto Serif 한글
+          </option>
+          <option
+            value="'Phudu', cursive"
+            style="font-family: 'Phudu', cursive"
+          >
+            Phodo
+          </option>
+          <option
+            value="'Nanum Gothic', sans-serif"
+            style="font-family: 'Nanum Gothic', sans-serif"
+          >
+            나눔 고딕
+          </option>
+          <option
+            value="'Playfair Display', serif;
+            "
+            style="font-family: 'Playfair Display', serif"
+          >
+            Playfair Display
+          </option>
+          <option
+            value="'Gothic A1', sans-serif"
+            style="font-family: 'Gothic A1', sans-serif"
+          >
+            고딕
+          </option>
+        </select>
+        <input id="font-size" type="number" value="48" />
+        <input type="text" placeholder="Add text here... :)" id="text" />
+      </fieldset>
+
       <button id="save">💾 Save Image</button>
     </div>
 

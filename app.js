@@ -72,8 +72,10 @@ function onCanvasClick() {
 }
 
 function onDestroyClick() {
-  ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  if (confirm("확인을 누르면 모든 작업이 삭제됩니다.")) {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  }
 }
 function onEraserClick() {
   ctx.strokeStyle = "white";
