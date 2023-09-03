@@ -1,3 +1,5 @@
+const fontSizeInput = document.getElementById("font-size");
+const fontSelector = document.getElementById("font-types");
 const saveBtn = document.getElementById("save");
 const textInput = document.getElementById("text");
 const fileInput = document.getElementById("file");
@@ -21,6 +23,7 @@ ctx.lineWidth = lineWidth.value;
 ctx.lineCap = "round";
 let isPainting = false;
 let isFilling = false;
+let font = fontSelector.value;
 
 function onMove(event) {
   if (isPainting) {
@@ -89,10 +92,11 @@ function onFileChange(event) {
 }
 function onDoubleClick(event) {
   const text = textInput.value;
+  const fontSize = fontSizeInput.value;
   if (text !== "") {
     ctx.save();
     ctx.lineWidth = 1;
-    ctx.font = "68px serif";
+    ctx.font = `${fontSize}px ${font}`;
     ctx.fillText(text, event.offsetX, event.offsetY);
     ctx.restore();
   }
@@ -103,6 +107,10 @@ function onSaveClick() {
   a.href = url;
   a.download = "myDrawing.png";
   a.click();
+}
+function onFontChange() {
+  font = fontSelector.value;
+  ctx.font = `48px ${font}`;
 }
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
@@ -120,3 +128,5 @@ destroyBtn.addEventListener("click", onDestroyClick);
 eraserBtn.addEventListener("click", onEraserClick);
 fileInput.addEventListener("change", onFileChange);
 saveBtn.addEventListener("click", onSaveClick);
+
+fontSelector.addEventListener("change", onFontChange);

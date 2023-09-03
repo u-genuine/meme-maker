@@ -62,7 +62,8 @@ input#file {
   display: none;
 }
 
-input#text {
+input#text,
+input#font-size {
   all: unset;
   padding: 10px 0px;
   text-align: center;
